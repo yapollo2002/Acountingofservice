@@ -1,13 +1,25 @@
 package com.yapollo.acountingofservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class RepairReceipt {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
+
+    @Column
+    private int phoneNumber;
+
+    @Column
+    private String model;
+
+    @Column
+    private String issue;
+
+    @Column
+    private String notes;
 
 
 
