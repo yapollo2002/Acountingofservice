@@ -1,9 +1,7 @@
 package com.yapollo.acountingofservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.yapollo.acountingofservice.model.RepairReceipt;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,8 +21,17 @@ public class Controller {
        }
 
        @PostMapping(path="/")
-       public void create(){
-           return null;
+       public void create(@RequestBody RepairReceipt receipt){
+
+       }
+       @PutMapping(path="/")
+       public void update(@RequestBody RepairReceipt receipt){
+
+       }
+
+       @DeleteMapping(path="/{id}")
+       public void delete(@PathVariable(value="id" int id){
+
        }
 
 }
