@@ -1,6 +1,8 @@
 package com.yapollo.acountingofservice.controller;
 
 import com.yapollo.acountingofservice.model.RepairReceipt;
+import com.yapollo.acountingofservice.service.ReceiptService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
 @RestController
 public class Controller {
 
-
+       @Autowired ReceiptService receiptService;
 
        @GetMapping(path="/all")
        public List find(){
@@ -16,8 +18,8 @@ public class Controller {
        }
 
        @GetMapping(path="/find/{phonenumber}")
-       public List findPhonenumber(@PathVariable(value="phonenumber") int phonenumber){
-           return null;
+       public RepairReceipt findPhonenumber(@PathVariable(value="phonenumber") int phonenumber){
+           return receiptService.findPhonenumber(phonenumber);
        }
 
        @PostMapping(path="/")

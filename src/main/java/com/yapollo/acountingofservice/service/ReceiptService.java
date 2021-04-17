@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("service")
+   @Service("receiptService")
  public class ReceiptService {
 
     @Autowired  ReceiptsRepository receiptsRepository;
