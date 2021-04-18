@@ -14,7 +14,8 @@ public class Controller {
 
        @GetMapping(path="/all")
        public List find(){
-           return null;
+
+           return receiptService.find();
        }
 
        @GetMapping(path="/find/{phonenumber}")
@@ -25,15 +26,17 @@ public class Controller {
        @PostMapping(path="/")
        public void create(@RequestBody RepairReceipt receipt){
 
+           receiptService.create(receipt);
        }
        @PutMapping(path="/")
        public void update(@RequestBody RepairReceipt receipt){
+           receiptService.update(receipt);
 
        }
 
        @DeleteMapping(path="/{id}")
        public void delete(@PathVariable(value="id") int id){
-
+           receiptService.delete(id);
        }
 
 }

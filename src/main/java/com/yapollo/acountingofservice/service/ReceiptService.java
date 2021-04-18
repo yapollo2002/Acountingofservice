@@ -12,12 +12,12 @@ import java.util.List;
 
     @Autowired  ReceiptsRepository receiptsRepository;
 
-    public List find(){
-        return (List)receiptsRepository.findAll();
+    public List find(){  return (List)receiptsRepository.findAll();
     }
 
     public RepairReceipt findPhonenumber(int phoneNumber){
-        return null;
+
+        return receiptsRepository.findByPhonenumber(phoneNumber);
     }
 
     public void create(RepairReceipt repairReceipt){
