@@ -17,18 +17,22 @@ import java.util.List;
 
     public RepairReceipt findPhonenumber(int phoneNumber){
 
-        return receiptsRepository.findByPhonenumber(phoneNumber);
+        return receiptsRepository.findByPhoneNumber(phoneNumber);
     }
 
     public void create(RepairReceipt repairReceipt){
+        receiptsRepository.save(repairReceipt);
 
     }
 
     public void update(RepairReceipt repairReceipt){
+        RepairReceipt receipt = receiptsRepository.findById(repairReceipt.getId()).get();
+        receiptsRepository.save(repairReceipt);
 
     }
 
-    public void delete(int id){
+    public void delete(Long id){
+       receiptsRepository.deleteById(id);
 
     }
 }
