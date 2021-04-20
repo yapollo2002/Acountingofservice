@@ -35,7 +35,7 @@ public class Controller {
        }
 
        @DeleteMapping(path="/{id}")
-       public void delete(@PathVariable(value="id") int id){
+       public void delete(@PathVariable(value="id") Long id){
            receiptService.delete(id);
        }
 

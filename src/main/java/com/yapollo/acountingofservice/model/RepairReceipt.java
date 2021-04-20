@@ -3,7 +3,7 @@ package com.yapollo.acountingofservice.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="ACOUNTINGOFSERVICE")
+@Table(name="acountingofservice")
 public class RepairReceipt {
 
     @Id
