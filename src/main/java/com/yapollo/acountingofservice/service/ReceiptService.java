@@ -5,6 +5,7 @@ import com.yapollo.acountingofservice.repository.ReceiptsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
    @Service("receiptService")
@@ -12,7 +13,9 @@ import java.util.List;
 
     @Autowired  ReceiptsRepository receiptsRepository;
 
-    public List find(){  return (List)receiptsRepository.findAll();
+    public List find(){
+        List listOfReceipts = (List) receiptsRepository.findAll();
+        return listOfReceipts;
     }
 
     public RepairReceipt findPhonenumber(int phoneNumber){
