@@ -4,6 +4,7 @@ import com.yapollo.acountingofservice.model.RepairReceipt;
 import com.yapollo.acountingofservice.repository.ReceiptsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +14,12 @@ import java.util.List;
 
     @Autowired  ReceiptsRepository receiptsRepository;
 
-    public List find(){
-        List listOfReceipts = (List) receiptsRepository.findAll();
-        return listOfReceipts;
+    public  Iterable<RepairReceipt> find(){
+        return receiptsRepository.findAll();
+
     }
 
-    public RepairReceipt findPhonenumber(int phoneNumber){
+    public RepairReceipt findPhoneNumber(Integer phoneNumber){
 
         return receiptsRepository.findByPhoneNumber(phoneNumber);
     }
@@ -34,7 +35,7 @@ import java.util.List;
 
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
        receiptsRepository.deleteById(id);
 
     }

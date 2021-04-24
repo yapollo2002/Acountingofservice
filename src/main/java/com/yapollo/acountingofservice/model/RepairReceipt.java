@@ -3,15 +3,15 @@ package com.yapollo.acountingofservice.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="acountingofservice")
+@Table(name= "repair_receipt")
 public class RepairReceipt {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
-    @Column
-    private int phoneNumber;
+    @Column(name="phone_number")
+    private Integer phoneNumber;
 
     @Column
     private String model;
@@ -23,19 +23,15 @@ public class RepairReceipt {
     @Column
     private String notes;
 
-    public Long getId() {
-        return id;
-    }
+    public Integer getId() { return id;   }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getPhoneNumber() { return  Long.valueOf(phoneNumber); }
+    public Integer getPhoneNumber() { return  phoneNumber; }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    public void setPhoneNumber(Integer number) { this.phoneNumber = number;   }
 
     public String getModel() {
         return model;

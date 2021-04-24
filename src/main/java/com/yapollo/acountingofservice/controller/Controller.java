@@ -13,14 +13,14 @@ public class Controller {
        @Autowired ReceiptService receiptService;
 
        @GetMapping(path="/all")
-       public List find(){
+       public @ResponseBody Iterable<RepairReceipt> find(){
 
            return receiptService.find();
        }
 
        @GetMapping(path="/find/{phonenumber}")
-       public RepairReceipt findPhonenumber(@PathVariable(value="phonenumber") int phonenumber){
-           return receiptService.findPhonenumber(phonenumber);
+       public RepairReceipt findPhoneNumber(@PathVariable(value="phonenumber") Integer phoneNumber){
+           return receiptService.findPhoneNumber(phoneNumber);
        }
 
        @PostMapping(path="/")
@@ -35,7 +35,7 @@ public class Controller {
        }
 
        @DeleteMapping(path="/{id}")
-       public void delete(@PathVariable(value="id") Long id){
+       public void delete(@PathVariable(value="id") Integer id){
            receiptService.delete(id);
        }
 
