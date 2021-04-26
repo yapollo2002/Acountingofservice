@@ -25,7 +25,12 @@ import java.util.List;
     }
 
     public void create(RepairReceipt repairReceipt){
-        receiptsRepository.save(repairReceipt);
+        RepairReceipt rr = new RepairReceipt();
+        rr.setPhoneNumber(repairReceipt.getPhoneNumber());
+        rr.setModel(repairReceipt.getModel());
+        rr.setIssue(repairReceipt.getIssue());
+        rr.setNotes(repairReceipt.getNotes());
+          receiptsRepository.save(rr);
 
     }
 
