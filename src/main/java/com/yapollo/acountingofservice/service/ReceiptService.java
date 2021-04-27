@@ -19,9 +19,13 @@ import java.util.List;
 
     }
 
-    public RepairReceipt findPhoneNumber(Integer phoneNumber){
+    public Iterable <RepairReceipt> findPhoneNumber(Integer phoneNumber){
 
         return receiptsRepository.findByPhoneNumber(phoneNumber);
+
+
+
+
     }
 
     public void create(RepairReceipt repairReceipt){
