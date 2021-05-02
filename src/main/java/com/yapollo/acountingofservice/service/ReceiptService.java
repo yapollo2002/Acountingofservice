@@ -14,8 +14,8 @@ import java.util.List;
 
     @Autowired  ReceiptsRepository receiptsRepository;
 
-    public  Iterable<RepairReceipt> find(){
-        return receiptsRepository.findAll();
+    public  List <RepairReceipt> find(){
+        return (List<RepairReceipt>)receiptsRepository.findAll();
 
     }
 

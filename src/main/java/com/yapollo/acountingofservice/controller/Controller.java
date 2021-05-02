@@ -7,15 +7,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class Controller {
 
        @Autowired ReceiptService receiptService;
 
        @GetMapping(path="/all")
-       public @ResponseBody Iterable<RepairReceipt> find(){
+       public List<RepairReceipt> find(){
 
-           return receiptService.find();
+           return  receiptService.find();
        }
 
        @GetMapping(path="/find/{phoneNumber}")
