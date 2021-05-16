@@ -19,7 +19,7 @@ import java.util.List;
 
     }
 
-    public Iterable <RepairReceipt> findPhoneNumber(Integer phoneNumber){
+    public RepairReceipt findPhoneNumber(Integer phoneNumber){
 
         return receiptsRepository.findByPhoneNumber(phoneNumber);
 

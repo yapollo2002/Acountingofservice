@@ -20,7 +20,7 @@ public class Controller {
        }
 
        @GetMapping(path="/find/{phoneNumber}")
-       public @ResponseBody Iterable <RepairReceipt> findPhoneNumber(@PathVariable(value="phoneNumber") Integer phoneNumber){
+       public @ResponseBody RepairReceipt findPhoneNumber(@PathVariable(value="phoneNumber") Integer phoneNumber){
            return receiptService.findPhoneNumber(phoneNumber);
        }
 

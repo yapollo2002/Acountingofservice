@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ReceiptsRepository extends CrudRepository<RepairReceipt, Integer> {
 
-    List<RepairReceipt> findByPhoneNumber (Integer phoneNumber);
+    RepairReceipt findByPhoneNumber (Integer phoneNumber);
 
 
 }
