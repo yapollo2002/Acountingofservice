@@ -1,1 +1,1 @@
-# Acountingofservice - It is small project for servicecenter of repairing and maintenance different type electrical devices. This is its server part. Client's part: https://github.com/yapollo2002/my-app_Reactpart.git
+# Acountingofservice - It is small project for servicecenter of repairing and maintenance different type electrical devices. This is its server part. Client part: https://github.com/yapollo2002/my-app_Reactpart.git
