@@ -34,6 +34,13 @@ public class Controller {
 
            receiptService.create(receipt);
        }
+
+    @PostMapping(path="/login")
+    public void login(){
+         LOGGER.info("Login");
+
+    }
+
        @PutMapping(path="/")
        public void update(@RequestBody RepairReceipt receipt){
            receiptService.update(receipt);
