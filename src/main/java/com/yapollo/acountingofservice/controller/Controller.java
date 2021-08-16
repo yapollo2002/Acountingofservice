@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 public class Controller {
 
@@ -26,12 +26,13 @@ public class Controller {
 
        @GetMapping(path="/find/{phoneNumber}")
        public @ResponseBody RepairReceipt findPhoneNumber(@PathVariable(value="phoneNumber") Integer phoneNumber){
+           LOGGER.info("Request of receipt by phoneNumber");
            return receiptService.findPhoneNumber(phoneNumber);
        }
 
        @PostMapping(path="/")
        public void create(@RequestBody RepairReceipt receipt){
-
+           LOGGER.info("Request of create a new receipt");
            receiptService.create(receipt);
        }
 
@@ -43,12 +44,14 @@ public class Controller {
 
        @PutMapping(path="/")
        public void update(@RequestBody RepairReceipt receipt){
+           LOGGER.info("Request of update");
            receiptService.update(receipt);
 
        }
 
        @DeleteMapping(path="/{id}")
        public void delete(@PathVariable(value="id") Integer id){
+           LOGGER.info("Request of delete");
            receiptService.delete(id);
        }
 
